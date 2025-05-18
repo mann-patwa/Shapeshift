@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=3 uid="uid://cenqb1lbtww1h"]
+
+[ext_resource type="Script" uid="uid://b6mcaqxit0y0t" path="res://scripts/custom_player_map.gd" id="1_b4rgr"]
+[ext_resource type="PackedScene" uid="uid://c8ofstpb5cgab" path="res://scenes/player.tscn" id="2_8i7qk"]
+[ext_resource type="PackedScene" uid="uid://2sk2b5fhptjb" path="res://scenes/killzone.tscn" id="3_di6vv"]
+[ext_resource type="Script" uid="uid://bxvlkvmd441u" path="res://scripts/custom_hud.gd" id="4_cgpkn"]
+[ext_resource type="AudioStream" uid="uid://be8v4mmvd7x3t" path="res://assets/music/time_for_adventure.mp3" id="5_gf7v7"]
+[ext_resource type="FontFile" uid="uid://dkgpjby7etnk3" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_ult2b"]
+[ext_resource type="PackedScene" uid="uid://14d7hyuj0gtd" path="res://scenes/snow_particles.tscn" id="7_t1fld"]
+
+[sub_resource type="TileSet" id="TileSet_cgpkn"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cgpkn"]
+
+[node name="Node2D" type="Node2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_b4rgr")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_cgpkn")
+format = 2
+
+[node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
+tile_set = SubResource("TileSet_cgpkn")
+
+[node name="killzone" parent="." instance=ExtResource("3_di6vv")]
+position = Vector2(436, 510)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+shape = SubResource("WorldBoundaryShape2D_cgpkn")
+
+[node name="Player" parent="." instance=ExtResource("2_8i7qk")]
+position = Vector2(-1.5, 10)
+scale = Vector2(2, 2)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+visible = false
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("4_cgpkn")
+
+[node name="TimerLabel" type="Label" parent="HUD"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -120.5
+offset_top = 30.0
+offset_right = 120.5
+offset_bottom = 101.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_ult2b")
+theme_override_font_sizes/font_size = 48
+
+[node name="Timer" type="Timer" parent="HUD"]
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_gf7v7")
+volume_db = -11.333
+autoplay = true
+bus = &"Music"
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("7_t1fld")]
+position = Vector2(20.5, 483.5)
+scale = Vector2(2, 2)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cupm4ti5mup5"]
+
+[ext_resource type="Script" uid="uid://jeubl65b40io" path="res://scripts/fileupload.gd" id="1_icggk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 44.0
+offset_top = 51.0
+offset_right = 121.0
+offset_bottom = 71.0
+theme_override_font_sizes/font_size = 16
+text = "press this buttton"
+script = ExtResource("1_icggk")

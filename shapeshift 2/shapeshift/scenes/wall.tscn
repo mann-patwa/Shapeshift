@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxy1lcglcco8r"]
+
+[ext_resource type="Texture2D" uid="uid://5sp0vn03q504" path="res://assets/sprites/WhatsApp Image 2025-05-18 at 02.06.18.jpeg" id="1_wykyb"]
+
+[node name="Wall" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 3
+texture_repeat = 2
+texture = ExtResource("1_wykyb")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]

@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://s1ul4sk1xw26"]
+
+[ext_resource type="Script" uid="uid://bvh4cjv7o5w40" path="res://scripts/mainmenu.gd" id="1_gmv32"]
+[ext_resource type="FontFile" uid="uid://dwo4rnmf1lh1e" path="res://assets/fonts/PixelOperator8.ttf" id="2_n47lj"]
+
+[sub_resource type="GDScript" id="GDScript_n47lj"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -20.5
+offset_right = -292.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gmv32")
+
+[node name="Button1" type="Button" parent="."]
+layout_mode = 0
+offset_left = -207.0
+offset_top = -62.0
+offset_right = 191.0
+offset_bottom = 141.0
+script = SubResource("GDScript_n47lj")
+
+[node name="Label1" type="Label" parent="."]
+layout_mode = 0
+offset_left = -206.0
+offset_top = -61.0
+offset_right = 192.0
+offset_bottom = 139.0
+theme_override_fonts/font = ExtResource("2_n47lj")
+theme_override_font_sizes/font_size = 32
+text = "PLAY THE 
+GAME!!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 435.0
+offset_top = -68.0
+offset_right = 813.0
+offset_bottom = 151.0
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 434.0
+offset_top = -71.0
+offset_right = 811.0
+offset_bottom = 145.0
+theme_override_fonts/font = ExtResource("2_n47lj")
+theme_override_font_sizes/font_size = 32
+text = "BUILD YOUR OWN    MAP!!!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
