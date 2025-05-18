@@ -37,7 +37,7 @@ Use these shapes to design your map:
 
 - Godot Engine
 - GDScript
-- Custom shape parser
+- OpenCV shape parser
 
 ## 📂 Getting Started
 
