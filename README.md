@@ -1,6 +1,7 @@
 # Shapeshift
 
-![Gameplay Demo](media/demo.gif)
+<video src="media/demo.mp4" controls width="500"></video>
+
 
 # 🕹️ Sketch-to-Game
 
