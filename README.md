@@ -17,10 +17,10 @@ Use these shapes to design your map:
 
 | Shape         | Meaning         |
 |---------------|-----------------|
-| 🟦 Pentagon     | **Start point**  |
-| 🟨 Hexagon      | **End point**    |
-| 🔺 Triangle     | **Coin / Collectible** |
-| ➖ Horizontal Line | **Platform**     |
+| Pentagon     | **Start point**  |
+| Hexagon      | **End point**    |
+| Triangle     | **Coin / Collectible** |
+| Horizontal Line | **Platform**     |
 
 > Only horizontal lines are considered platforms. Other lines are ignored.
 
